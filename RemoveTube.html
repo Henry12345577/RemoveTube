@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoveTube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff0000;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>RemoveTube</h1>
+    <p>Enter the URL of the YouTube video you want to "delete":</p>
+    <form id="removeForm">
+        <input type="text" id="videoUrl" placeholder="Paste YouTube video URL here..." required>
+        <button type="submit">Delete Video</button>
+    </form>
+    <p id="message" style="margin-top: 20px;"></p>
+    <footer>
+        <p>&copy; 2024 RemoveTube - A fictional concept site.</p>
+    </footer>
+    <script>
+        document.getElementById('removeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const videoUrl = document.getElementById('videoUrl').value;
+            const message = document.getElementById('message');
+            if (videoUrl.trim() === "") {
+                message.textContent = "Please enter a valid YouTube video URL.";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Video at URL '" + videoUrl + "' has been 'deleted' (not really, this is just a demo).";
+                message.style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>
